@@ -12,9 +12,7 @@ menu = [{'title': "О сайте", 'url_name': 'about'},
 
 data_db = [
     {'id': 1, 'title': 'Анджелина Джоли', 'content': '''<h1>Анджелина Джоли</h1> (англ. Angelina Jolie[7], при рождении Войт (англ. Voight), ранее Джоли Питт (англ. Jolie Pitt); род. 4 июня 1975, Лос-Анджелес, Калифорния, США) — американская актриса кино, телевидения и озвучивания, кинорежиссёр, сценаристка, продюсер, фотомодель, посол доброй воли ООН.
-
-       Обладательница премии «Оскар», трёх премий «Золотой глобус» (первая актриса в истории, три года подряд выигравшая премию) и двух «Премий Гильдии киноактёров США».''',
-
+    Обладательница премии «Оскар», трёх премий «Золотой глобус» (первая актриса в истории, три года подряд выигравшая премию) и двух «Премий Гильдии киноактёров США».''',
      'is_published': True},
     {'id': 2, 'title': 'Марго Робби', 'content': 'Биография Марго Робби', 'is_published': False},
     {'id': 3, 'title': 'Джулия Робертс', 'content': 'Биография Джулия Робертс', 'is_published': True},
@@ -41,29 +39,25 @@ def about(request):
     return render(request, 'women/about.html', {'title': 'О сайте', 'menu': menu})
 
 
-def categories(request, cat_id):
-    return HttpResponse(f"<h1>Статьи по категориям</h1><p>id: {cat_id}</p>")
-
-
 def show_post(request, post_id):
-    return HttpResponse(f'Отображение статьи с id = {post_id}')
+    return HttpResponse(f"Отображение статьи с id = {post_id}")
 
 
 def addpage(request):
-    return HttpResponse('Добавление статьи')
+    return HttpResponse("Добавление статьи")
 
 
 def contact(request):
-    return HttpResponse('Обратная связь')
+    return HttpResponse("Обратная связь")
 
 
 def login(request):
-    return HttpResponse('Авторизация')
+    return HttpResponse("Авторизация")
 
 
 def show_category(request, cat_id):
     data = {
-        'title': 'Отображение по рурикам',
+        'title': 'Отображение по рубоикам',
         'menu': menu,
         'posts': data_db,
         'cat_selected': cat_id,
